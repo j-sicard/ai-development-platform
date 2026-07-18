@@ -2,136 +2,198 @@
 
 ## Présentation
 
-Le pipeline DevOps décrit l'organisation du cycle de développement de la plateforme AI Development Platform.
+Le pipeline DevOps décrit l'organisation du cycle de développement et d'évolution de AI Studio ainsi que des projets accompagnés par la plateforme.
 
-Il permet de structurer les différentes étapes entre la conception, le développement, les tests et le déploiement.
+Il permet de structurer les différentes étapes entre la conception, le développement, les tests, la validation et le déploiement.
 
-L'objectif est d'assurer une évolution fiable et reproductible du projet.
+L'objectif est d'assurer une évolution fiable, reproductible et maintenable des applications.
+
+Dans AI Studio, l'agent DevOps Engineer intervient pour appliquer les bonnes pratiques d'automatisation, de déploiement et de gestion des environnements.
 
 ---
 
 # Vue globale du pipeline
 
 ```text
-+----------------------+
-|  Développement       |
-|  Code et évolution   |
-+----------------------+
-           |
-           v
-+----------------------+
-|       Git            |
-| Gestion du code      |
-+----------------------+
-           |
-           v
-+----------------------+
-| Tests et validation  |
-| QA Engineer          |
-+----------------------+
-           |
-           v
-+----------------------+
-| Build Docker         |
-| Création services    |
-+----------------------+
-           |
-           v
-+----------------------+
-| Déploiement          |
-| Environnement local  |
-+----------------------+
++------------------------------+
+| Analyse et conception        |
+| Agents IA spécialisés        |
++------------------------------+
+              |
+              v
++------------------------------+
+| Développement                |
+| Backend / Frontend           |
++------------------------------+
+              |
+              v
++------------------------------+
+| Gestion du code              |
+| Git                          |
++------------------------------+
+              |
+              v
++------------------------------+
+| Tests et validation          |
+| QA Engineer                  |
++------------------------------+
+              |
+              v
++------------------------------+
+| Conteneurisation             |
+| Docker                       |
++------------------------------+
+              |
+              v
++------------------------------+
+| Déploiement                  |
+| Environnements d'exécution   |
++------------------------------+
+              |
+              v
++------------------------------+
+| Supervision et évolution     |
+| Maintenance continue         |
++------------------------------+
 ```
+## 1. Analyse et conception
 
----
+Avant le développement, les agents IA participent à la définition du projet.
 
-# 1. Développement
+Interventions :
 
-Les agents IA participent aux différentes phases du développement logiciel.
+Product Owner : analyse les besoins métier ;
+Research Analyst : étudie les solutions existantes ;
+Architecte Logiciel : définit la structure technique.
 
-Exemples :
+Livrables possibles :
 
-- Analyse du besoin par le Product Owner
-- Conception par l'Architecte Logiciel
-- Développement Backend et Frontend
-- Documentation technique
+besoins fonctionnels ;
+architecture ;
+choix techniques ;
+documentation initiale.
+## 2. Développement
 
----
+Les agents spécialisés participent à la réalisation de la solution.
 
-# 2. Gestion du code source
+Interventions :
 
-Git permet de suivre les évolutions du projet.
+Backend Developer :
+développement des services ;
+création des API ;
+implémentation de la logique métier.
+Frontend Developer :
+création des interfaces ;
+intégration avec les services backend.
+Technical Writer :
+documentation des fonctionnalités.
+## 3. Gestion du code source
+
+Git permet de suivre l'évolution des projets logiciels.
 
 Utilisation :
 
-- Historique des modifications
-- Gestion des versions
-- Organisation du travail
-- Sauvegarde du projet
+historique des modifications ;
+gestion des versions ;
+collaboration entre développeurs ;
+sauvegarde du code source ;
+suivi des évolutions.
 
----
+À terme, Git pourra être intégré plus fortement dans les workflows des agents IA.
 
-# 3. Tests et validation
+## 4. Tests et validation
 
-Le QA Engineer intervient pour garantir la qualité.
+La qualité du logiciel est vérifiée avant chaque évolution importante.
+
+Le QA Engineer intervient pour :
+
+définir les stratégies de test ;
+vérifier les fonctionnalités ;
+détecter les anomalies ;
+valider les corrections.
 
 Les contrôles peuvent inclure :
 
-- Tests fonctionnels
-- Vérification des fonctionnalités
-- Validation des composants
-- Détection des anomalies
+tests fonctionnels ;
+tests unitaires ;
+tests d'intégration ;
+tests de validation.
+## 5. Conteneurisation avec Docker
 
----
-
-# 4. Environnement Docker
-
-Docker permet de créer un environnement reproductible.
+Docker permet de créer des environnements reproductibles.
 
 Avantages :
 
-- Isolation des services
-- Configuration identique entre environnements
-- Déploiement simplifié
-- Gestion des dépendances
+isolation des services ;
+configuration cohérente ;
+déploiement simplifié ;
+gestion des dépendances.
 
-Services utilisés :
+Dans AI Studio, Docker est actuellement utilisé pour exécuter :
 
-- Open WebUI
-- Services IA
-- Environnement local
+Open WebUI ;
+les services associés ;
+l'environnement local d'exécution.
+## 6. Déploiement
 
----
-
-# 5. Déploiement
-
-Le déploiement permet de rendre la plateforme disponible dans son environnement d'exécution.
+Le déploiement permet de rendre une application disponible dans son environnement d'exécution.
 
 Le processus comprend :
 
-- Démarrage des services
-- Vérification de l'état des composants
-- Validation du fonctionnement global
+préparation des services ;
+configuration de l'environnement ;
+démarrage des composants ;
+vérification du fonctionnement.
 
----
+L'objectif est de garantir un déploiement fiable et reproductible.
 
-# Rôle du DevOps Engineer Senior
+## 7. Rôle du DevOps Engineer Senior
 
-L'agent DevOps assure :
+L'agent DevOps Engineer assure :
 
-- La gestion de l'environnement technique
-- La configuration Docker
-- L'automatisation des opérations
-- La maintenance du pipeline
-- L'amélioration du processus de livraison
+la définition des stratégies de déploiement ;
+la gestion des environnements ;
+la configuration Docker ;
+l'automatisation des tâches répétitives ;
+l'amélioration de la fiabilité ;
+la documentation des procédures techniques.
 
----
+Il collabore notamment avec :
 
-# Objectif du pipeline
+Architecte Logiciel ;
+Backend Developer ;
+Security Engineer ;
+QA Engineer ;
+Technical Writer.
+## 8. Supervision et maintenance
+
+Après le déploiement, l'application doit être suivie dans le temps.
+
+Les activités comprennent :
+
+surveillance des services ;
+analyse des erreurs ;
+amélioration des performances ;
+maintenance corrective ;
+évolution continue.
+Évolution future du pipeline
+
+Le pipeline DevOps pourra évoluer avec :
+
+intégration Git complète ;
+automatisation CI/CD ;
+exécution automatique des tests ;
+analyse de sécurité automatisée ;
+génération automatique de documentation ;
+interaction directe entre les agents IA et les outils de développement.
+Objectif du pipeline
 
 Le pipeline DevOps permet :
 
-- Une meilleure organisation du développement
-- Une réduction des erreurs de déploiement
-- Une évolution contrôlée de la plateforme
-- Une approche proche des pratiques professionnelles
+une meilleure organisation du développement ;
+une réduction des erreurs ;
+des déploiements reproductibles ;
+une meilleure collaboration entre les agents IA ;
+une évolution professionnelle et maîtrisée des projets logiciels.
+
+

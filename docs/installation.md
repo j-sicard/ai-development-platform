@@ -1,15 +1,18 @@
-# Installation de la plateforme IA locale
+# Installation de AI Studio
 
 ## Présentation
 
-Ce document décrit l'installation de la plateforme AI Development Platform basée sur une architecture IA locale.
+Ce document décrit l'installation de AI Studio, une plateforme locale d'agents IA spécialisés basée sur une architecture IA locale.
 
-La solution utilise :
+La plateforme permet d'exécuter des modèles IA localement et de configurer une équipe d'agents spécialisés capables d'accompagner des projets de développement logiciel.
 
-- Docker pour l'environnement d'exécution
-- Open WebUI comme interface utilisateur IA
-- Ollama comme moteur d'exécution des modèles
-- Qwen2.5-Coder 14B comme modèle de langage
+La plateforme utilise :
+
+- Docker pour l'environnement d'exécution ;
+- Open WebUI comme interface utilisateur IA ;
+- Ollama comme moteur d'exécution local des modèles ;
+- Qwen2.5-Coder 14B comme modèle IA principal ;
+- des agents IA spécialisés configurés dans Open WebUI.
 
 ---
 
@@ -28,9 +31,9 @@ L'utilisation d'un modèle local nécessite des ressources matérielles suffisan
 
 Recommandations :
 
-- Processeur récent
-- Mémoire RAM adaptée au modèle utilisé
-- GPU recommandé pour de meilleures performances
+- Processeur récent ;
+- Mémoire RAM adaptée au modèle utilisé ;
+- GPU recommandé pour de meilleures performances.
 
 ---
 
@@ -43,123 +46,106 @@ docker --version
 ```
 
 Vérifier que Docker fonctionne :
-
 ```bash
 docker ps
 ```
-
----
-
 # Installation d'Ollama
 
 Installer Ollama puis vérifier l'installation :
-
 ```bash
 ollama --version
 ```
+Installation du modèle IA
 
----
-
-# Installation du modèle IA
-
-Le modèle utilisé par la plateforme est :
-
-```text
+Le modèle utilisé actuellement par la plateforme est :
+```bash
 Qwen2.5-Coder 14B
 ```
-
 Téléchargement du modèle :
-
 ```bash
 ollama pull qwen2.5-coder:14b
 ```
-
 Vérification des modèles installés :
-
 ```bash
 ollama list
 ```
-
 Exemple :
-
-```text
+```bash
 NAME
+
 qwen2.5-coder:14b
 ```
-
----
-
 # Installation d'Open WebUI
 
 Le lancement d'Open WebUI utilise Docker.
 
-Créer le dossier du service :
-
-```text
+Le service est situé dans :
+```bash
 services/open-webui
 ```
-
 Démarrer le service :
-
 ```bash
 docker compose up -d
 ```
-
 Vérifier le conteneur :
-
 ```bash
 docker ps
 ```
-
 Exemple :
-
-```text
+```bash
 open-webui
 PORT 3000->8080
 STATUS healthy
 ```
-
----
-
 # Accès à l'interface
 
 Une fois le service démarré, accéder à :
-
-```text
+```bash
 http://localhost:3000
 ```
-
 Open WebUI fournit l'interface conversationnelle permettant d'utiliser les modèles IA locaux.
 
----
+## Configuration des agents IA
 
-# Vérification du fonctionnement
+Les agents IA sont actuellement configurés directement dans Open WebUI.
+
+Chaque agent possède :
+
+un rôle spécialisé ;
+des instructions propres ;
+des connaissances associées.
+
+Les agents disponibles sont :
+
+Product Owner / Business Analyst Senior ;
+Research Analyst Senior ;
+Architecte Logiciel Senior ;
+Backend Developer Senior ;
+Frontend Developer Senior ;
+DevOps Engineer Senior ;
+QA Engineer Senior ;
+Security Engineer Senior ;
+Technical Writer / Documentation Engineer.
+
+Ces agents utilisent une base de connaissances commune couvrant les principaux domaines de l'ingénierie logicielle.
+
+## Vérification du fonctionnement
 
 Vérifier les modèles disponibles :
-
 ```bash
 ollama list
 ```
-
 Vérifier les modèles actifs :
-
 ```bash
 ollama ps
 ```
-
 Tester une requête :
-
 ```bash
 ollama run qwen2.5-coder:14b
 ```
-
----
-
-# Structure du projet
-
-```text
-AI-Development-Platform
-
+## Structure du projet
+AI-Studio
+```bash
 ├── README.md
 │
 ├── diagrams
@@ -173,21 +159,31 @@ AI-Development-Platform
 │   ├── architecture.md
 │   ├── pipeline-devops.md
 │   └── installation.md
+│
+└── services
+    └── open-webui
 ```
-
----
-
-# Résultat attendu
+## Résultat attendu
 
 Après installation :
 
-- Open WebUI est accessible localement
-- Ollama exécute le modèle IA
-- Qwen2.5-Coder 14B répond aux demandes
-- L'environnement est prêt pour l'intégration des agents IA spécialisés
+Open WebUI est accessible localement ;
+Ollama exécute le modèle IA ;
+Qwen2.5-Coder 14B répond aux demandes ;
+les agents IA spécialisés peuvent être utilisés dans l'environnement local ;
+la plateforme est prête pour accompagner des projets logiciels.
+## Évolutions futures
 
----
+AI Studio évoluera progressivement avec l'ajout de nouveaux composants :
 
-# Objectif
+base PostgreSQL pour les données structurées ;
+base vectorielle pour la recherche documentaire ;
+architecture RAG ;
+mémoire projet persistante ;
+amélioration de la collaboration entre agents ;
+intégration avec les outils de développement.
+## Objectif
 
-Cette installation permet d'obtenir une plateforme IA locale, autonome et reproductible pour accompagner des projets de développement logiciel.
+Cette installation permet d'obtenir une plateforme IA locale, autonome et reproductible permettant d'accompagner la conception, le développement et l'évolution de projets logiciels grâce à une équipe d'agents IA spécialisés.
+
+

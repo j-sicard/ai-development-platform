@@ -1,117 +1,149 @@
-# AI Development Platform
+# AI Studio
 
 ## Présentation
 
-AI Development Platform est une plateforme d'assistance au développement logiciel basée sur l'intelligence artificielle.
+AI Studio est une plateforme locale d'ingénierie logicielle assistée par intelligence artificielle.
 
-L'objectif est de créer un environnement capable d'accompagner les différentes phases d'un projet informatique grâce à des agents IA spécialisés.
+Son objectif est de reproduire le fonctionnement d'une équipe de développement logiciel grâce à plusieurs agents IA spécialisés collaborant autour d'un projet commun.
 
-La plateforme simule une équipe technique complète composée de plusieurs profils experts : architecture, développement, DevOps, sécurité, qualité et documentation.
-
----
-
-## Objectifs du projet
-
-Cette plateforme permet de :
-
-- structurer les connaissances d'un projet ;
-- assister les équipes de développement ;
-- améliorer la qualité du code ;
-- accélérer l'analyse et la conception ;
-- automatiser certaines tâches répétitives ;
-- appliquer les bonnes pratiques d'ingénierie logicielle.
+Chaque agent possède un domaine d'expertise (analyse métier, architecture, développement, sécurité, qualité, documentation...) et s'appuie sur une base de connaissances commune afin de produire des livrables cohérents tout au long du cycle de vie d'un projet logiciel.
 
 ---
 
-## Architecture globale
+# Objectifs
 
-La solution repose sur :
+AI Studio a pour objectif de :
 
-- **Open WebUI** : interface utilisateur IA ;
-- **Gestion des agents IA** : agents spécialisés par domaine ;
-- **Base de connaissances projet** : stockage des informations métier, techniques et documentaires utilisées par les agents IA ;
-- **Ollama** : moteur d'exécution local des modèles IA ;
-- **Qwen2.5-Coder 14B** : modèle IA principal utilisé.
-
----
-
-## Agents IA
-
-La plateforme utilise une équipe de 9 agents spécialisés :
-
-- Product Owner / Business Analyst Senior
-- Research Analyst Senior
-- Architecte Logiciel Senior
-- Backend Developer Senior
-- Frontend Developer Senior
-- DevOps Engineer Senior
-- QA Engineer Senior
-- Security Engineer Senior
-- Technical Writer / Documentation Engineer
+* accompagner la conception de projets logiciels ;
+* assister l'analyse des besoins métier ;
+* proposer des architectures adaptées ;
+* participer au développement backend et frontend ;
+* améliorer la qualité logicielle ;
+* intégrer les bonnes pratiques DevOps et sécurité ;
+* produire une documentation technique structurée ;
+* constituer progressivement une mémoire propre à chaque projet.
 
 ---
 
-## Projet démonstrateur
+# Fonctionnement
 
-La plateforme est utilisée pour accompagner la conception d'un ERP PME.
+Le fonctionnement général repose sur plusieurs étapes :
 
-Elle permet de gérer :
-
-- l'architecture ;
-- le développement ;
-- la documentation ;
-- les tests ;
-- le déploiement ;
-- les bonnes pratiques DevOps.
-
----
-
-## Documentation
-
-La documentation complète se trouve dans le dossier :
-
+```text
+Expression du besoin
+        │
+        ▼
+Analyse métier
+        │
+        ▼
+Conception de l'architecture
+        │
+        ▼
+Développement
+        │
+        ▼
+Tests et validation
+        │
+        ▼
+Déploiement
+        │
+        ▼
+Documentation
 ```
+
+Chaque étape est prise en charge par un ou plusieurs agents spécialisés.
+
+---
+
+# Équipe d'agents IA
+
+La plateforme est composée de neuf agents spécialisés :
+
+* Product Owner / Business Analyst Senior
+* Research Analyst Senior
+* Architecte Logiciel Senior
+* Backend Developer Senior
+* Frontend Developer Senior
+* DevOps Engineer Senior
+* QA Engineer Senior
+* Security Engineer Senior
+* Technical Writer / Documentation Engineer
+
+Les agents collaborent afin de transformer un besoin utilisateur en une solution logicielle complète.
+
+---
+
+# Base de connaissances
+
+Les agents s'appuient sur une base de connaissances générale composée de plusieurs domaines d'expertise :
+
+* Méthodologie Projet Logiciel
+* Analyse Métier et Besoins
+* Architecture
+* Développement Backend
+* Développement Frontend
+* Bases de Données
+* DevOps et Infrastructure
+* Sécurité Applicative
+* Tests et Qualité Logicielle
+* Documentation Technique
+
+Ces connaissances sont indépendantes des technologies et peuvent être utilisées pour accompagner différents types de projets logiciels.
+
+---
+
+# Architecture technique
+
+La plateforme repose actuellement sur :
+
+| Domaine          | Technologie       |
+| ---------------- | ----------------- |
+| Interface IA     | Open WebUI        |
+| Moteur IA        | Ollama            |
+| Modèle IA        | Qwen2.5-Coder 14B |
+| Conteneurisation | Docker            |
+| Documentation    | Markdown          |
+| IDE              | IntelliJ IDEA     |
+
+---
+
+# Évolution du projet
+
+AI Studio est conçu pour évoluer progressivement.
+
+Les prochaines évolutions prévues comprennent notamment :
+
+* mémoire projet ;
+* architecture RAG ;
+* base de données relationnelle ;
+* base de données vectorielle ;
+* collaboration avancée entre agents ;
+* enrichissement automatique des connaissances ;
+* intégration Git ;
+* automatisation des workflows.
+
+---
+
+# Documentation
+
+La documentation du projet est disponible dans le dossier :
+
+```text
 docs/
 ```
 
-Documents disponibles :
+Elle comprend notamment :
 
-- [Présentation](docs/presentation.md)
-- [Architecture](docs/architecture.md)
-- [Agents IA](docs/agents.md)
-- [Pipeline DevOps](docs/pipeline-devops.md)
-- [Installation](docs/installation.md)
-
----
-
-## Technologies utilisées
-
-| Domaine | Technologie |
-|---|---|
-| Interface IA | Open WebUI |
-| Modèle IA | Qwen2.5-Coder 14B |
-| Moteur IA | Ollama |
-| Conteneurisation | Docker |
-| Documentation | Markdown |
-| IDE | IntelliJ IDEA |
+* présentation du projet ;
+* architecture ;
+* organisation des agents ;
+* pipeline DevOps ;
+* installation de la plateforme.
 
 ---
 
-## Statut du projet
+# Statut du projet
 
-Phase actuelle : prototype fonctionnel.
+Projet en cours de développement.
 
-La plateforme locale est opérationnelle avec :
-
-- Open WebUI comme interface IA ;
-- Ollama comme moteur local ;
-- Qwen2.5-Coder 14B comme modèle principal ;
-- 9 agents IA spécialisés configurés ;
-- 10 bases de connaissances créées dans l'espace de travail Open WebUI.
-
-Les prochaines étapes concernent :
-- la validation des agents ;
-- l'amélioration des connaissances ;
-- l'externalisation de la configuration ;
-- l'intégration d'une base de connaissances évolutive ;
-- la mise en place d'une architecture RAG complète.
+La plateforme évolue progressivement afin de devenir un environnement local d'ingénierie logicielle assistée par une équipe d'agents IA spécialisés.

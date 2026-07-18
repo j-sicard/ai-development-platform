@@ -1,301 +1,132 @@
-# Présentation du Projet IA - AI Development Platform
+# AI Studio
 
-## 1. Introduction
+## Présentation
 
-AI Development Platform est une plateforme d'assistance au développement logiciel basée sur l'intelligence artificielle.
+AI Studio est une plateforme locale d'ingénierie logicielle assistée par intelligence artificielle.
 
-L'objectif du projet est de créer un environnement capable d'accompagner un projet informatique complet grâce à une équipe d'agents IA spécialisés.
+L'objectif du projet est de créer un environnement capable d'accompagner les différentes phases de création d'un logiciel grâce à une équipe d'agents IA spécialisés.
 
-Cette plateforme permet de reproduire l'organisation d'une équipe technique professionnelle en associant :
+La plateforme simule une équipe technique complète composée de plusieurs experts capables de collaborer autour d'un projet :
 
-- des agents IA spécialisés ;
-- une base de connaissances projet ;
-- un moteur IA local ;
-- une interface utilisateur conversationnelle.
-
----
-
-# 2. Contexte du projet
-
-Le développement d'une application professionnelle nécessite plusieurs compétences :
-
-- analyse fonctionnelle ;
-- architecture logicielle ;
-- développement backend ;
-- développement frontend ;
-- sécurité ;
-- assurance qualité ;
-- DevOps ;
-- documentation.
-
-Traditionnellement, ces responsabilités sont réparties entre plusieurs membres d'une équipe.
-
-Ce projet explore l'utilisation d'agents IA spécialisés capables d'assister ces différents rôles tout au long du cycle de développement.
+* analyse métier ;
+* recherche technique ;
+* architecture ;
+* développement ;
+* sécurité ;
+* qualité ;
+* déploiement ;
+* documentation.
 
 ---
 
-# 3. Objectifs
+# Vision du projet
 
-Les objectifs principaux sont :
+Le développement logiciel nécessite aujourd'hui de nombreuses compétences complémentaires.
 
-- améliorer la productivité des équipes techniques ;
-- centraliser les connaissances d'un projet ;
-- faciliter la conception logicielle ;
-- accélérer les phases de développement ;
-- améliorer la qualité des livrables ;
-- automatiser certaines tâches répétitives ;
-- appliquer les bonnes pratiques d'ingénierie logicielle.
-
----
-
-# 4. Architecture générale de la plateforme
-
-La plateforme repose sur quatre composants principaux.
-
-## Open WebUI
-
-Open WebUI constitue l'interface utilisateur de la plateforme.
-
-Responsabilités :
-
-- fournir une interface conversationnelle ;
-- permettre l'accès aux agents IA ;
-- gérer les interactions avec l'utilisateur.
-
----
-
-## Gestion des agents IA
-
-La plateforme utilise plusieurs agents spécialisés.
+AI Studio vise à créer un environnement dans lequel plusieurs agents IA spécialisés peuvent collaborer afin de reproduire le fonctionnement d'une équipe d'ingénierie logicielle.
 
 Chaque agent possède :
 
-- un rôle défini ;
-- des responsabilités spécifiques ;
-- un domaine d'expertise ;
-- des instructions adaptées.
-
-Les agents collaborent afin d'accompagner les différentes étapes d'un projet logiciel.
+* un rôle défini ;
+* une expertise spécifique ;
+* des connaissances adaptées à son domaine ;
+* une capacité à collaborer avec les autres agents.
 
 ---
 
-## Base de connaissances
+# Objectifs
 
-La base de connaissances contient le contexte du projet.
+AI Studio permet de :
 
-Elle regroupe :
-
-- documentation architecture ;
-- documentation développement ;
-- documentation API ;
-- règles métier ;
-- sécurité ;
-- tests QA ;
-- procédures DevOps ;
-- décisions techniques ADR.
-
-Elle permet aux agents de produire des réponses cohérentes avec le projet.
+* transformer une idée en projet structuré ;
+* analyser les besoins utilisateurs ;
+* concevoir une architecture logicielle ;
+* accompagner les phases de développement ;
+* améliorer la qualité du code ;
+* appliquer les bonnes pratiques de sécurité ;
+* automatiser certaines tâches techniques ;
+* produire une documentation complète.
 
 ---
 
-## Ollama
+# Fonctionnement général
 
-Ollama est utilisé comme moteur d'exécution local des modèles IA.
+Le fonctionnement repose sur plusieurs éléments :
 
-Son rôle :
+## Agents IA spécialisés
 
-- charger les modèles IA ;
-- exécuter les requêtes localement ;
-- fournir les capacités d'intelligence artificielle aux agents.
+Chaque agent intervient selon son domaine d'expertise.
 
----
+Exemple :
 
-# 5. Modèle IA utilisé
-
-Le modèle principal utilisé est :
-
-## Qwen2.5-Coder 14B
-
-Ce modèle est spécialisé dans les tâches liées au développement logiciel.
-
-Utilisations :
-
-- génération de code ;
-- analyse technique ;
-- aide à la conception ;
-- compréhension d'architecture ;
-- assistance aux développeurs.
+![architecture-studio-ia.png](../assets/architecture-studio-ia.png)
 
 ---
 
-# 6. Organisation des agents IA
+# Connaissances des agents
 
-La plateforme est composée de neuf agents spécialisés.
+Les agents utilisent une base de connaissances commune regroupant les fondamentaux de l'ingénierie logicielle.
 
-## Product Owner / Business Analyst Senior
+Elle comprend :
 
-Responsabilités :
+* Méthodologie Projet Logiciel ;
+* Analyse Métier et Besoins ;
+* Architecture ;
+* Développement Backend ;
+* Développement Frontend ;
+* Bases de Données ;
+* DevOps et Infrastructure ;
+* Sécurité Applicative ;
+* Tests et Qualité Logicielle ;
+* Documentation Technique.
 
-- analyse des besoins ;
-- définition des fonctionnalités ;
-- rédaction des exigences métier.
-
----
-
-## Research Analyst Senior
-
-Responsabilités :
-
-- recherche technique ;
-- analyse des solutions existantes ;
-- veille technologique.
+Ces connaissances permettent aux agents d'être polyvalents et de s'adapter à différents types de projets.
 
 ---
 
-## Architecte Logiciel Senior
+# Mémoire projet et évolution future
 
-Responsabilités :
+Chaque projet accompagné par AI Studio pourra disposer progressivement de sa propre mémoire.
 
-- conception architecture ;
-- choix techniques ;
-- décisions ADR ;
-- cohérence globale du système.
+Cette mémoire permettra de conserver :
 
----
+* les besoins du projet ;
+* les décisions techniques ;
+* l'architecture choisie ;
+* les modèles de données ;
+* les documents produits ;
+* l'historique des évolutions.
 
-## Backend Developer Senior
-
-Responsabilités :
-
-- conception API ;
-- logique métier ;
-- architecture serveur ;
-- qualité du code backend.
+Cette évolution s'appuiera sur une architecture RAG permettant aux agents de retrouver les informations pertinentes au moment où elles sont nécessaires.
 
 ---
 
-## Frontend Developer Senior
+# Architecture technique actuelle
 
-Responsabilités :
+La plateforme utilise actuellement :
 
-- conception interface ;
-- composants React ;
-- expérience utilisateur.
-
----
-
-## DevOps Engineer Senior
-
-Responsabilités :
-
-- Docker ;
-- CI/CD ;
-- déploiement ;
-- automatisation.
+* Open WebUI comme interface utilisateur IA ;
+* Ollama comme moteur local d'exécution ;
+* Qwen2.5-Coder 14B comme modèle IA ;
+* Docker pour l'environnement d'exécution.
 
 ---
 
-## QA Engineer Senior
+# Évolutions prévues
 
-Responsabilités :
+Les prochaines étapes du projet comprennent :
 
-- stratégie de tests ;
-- validation qualité ;
-- tests automatisés.
-
----
-
-## Security Engineer Senior
-
-Responsabilités :
-
-- sécurité applicative ;
-- analyse des risques ;
-- contrôle des accès.
-
----
-
-## Technical Writer / Documentation Engineer
-
-Responsabilités :
-
-- organisation documentaire ;
-- rédaction technique ;
-- maintenance de la documentation.
-
----
-
-# 7. Projet démonstrateur : ERP PME
-
-La plateforme est utilisée pour accompagner la conception d'un ERP destiné aux PME.
-
-Le projet ERP couvre :
-
-- gestion clients ;
-- fournisseurs ;
-- stocks ;
-- achats ;
-- ventes ;
-- comptabilité ;
-- ressources humaines ;
-- reporting.
-
-Les agents IA utilisent la documentation ERP comme source de contexte.
-
----
-
-# 8. Technologies utilisées
-
-| Domaine | Technologie |
-|---|---|
-| Interface IA | Open WebUI |
-| Moteur IA | Ollama |
-| Modèle IA | Qwen2.5-Coder 14B |
-| Conteneurisation | Docker |
-| Documentation | Markdown |
-| IDE | IntelliJ IDEA |
-| Gestion de versions | Git |
-
----
-
-# 9. Approche technique
-
-Le projet applique plusieurs principes professionnels :
-
-- séparation des responsabilités ;
-- documentation continue ;
-- spécialisation des rôles ;
-- approche DevOps ;
-- automatisation ;
-- qualité logicielle ;
-- sécurité intégrée.
-
----
-
-# 10. Valeur ajoutée du projet
-
-Cette plateforme permet :
-
-- de créer un environnement de développement assisté par IA ;
-- de conserver la connaissance projet ;
-- d'améliorer la collaboration entre différents domaines techniques ;
-- d'accélérer la conception d'applications ;
-- de structurer l'utilisation de l'intelligence artificielle dans un contexte professionnel.
-
----
-
-# 11. Diagrammes associés
-
-La compréhension de la plateforme est complétée par :
-
-- Diagramme 1 : Architecture de la plateforme IA ;
-- Diagramme 2 : Organisation des agents IA ;
-- Diagramme 3 : Pipeline DevOps.
+* mise en place d'une base de données projet ;
+* intégration d'une base vectorielle ;
+* amélioration de la mémoire des agents ;
+* orchestration de la collaboration entre agents ;
+* automatisation des workflows ;
+* intégration avec les outils de développement.
 
 ---
 
 # Conclusion
 
-AI Development Platform représente une approche d'assistance au développement logiciel combinant intelligence artificielle, documentation structurée et organisation par agents spécialisés.
+AI Studio a pour ambition de devenir une plateforme locale permettant à une équipe d'agents IA spécialisés d'accompagner la conception et l'évolution de projets logiciels complets.
 
-Le projet démontre comment l'IA peut être intégrée dans un processus professionnel de conception, développement, qualité et déploiement d'applications.
+Le projet évolue progressivement vers un environnement d'ingénierie logicielle assistée par intelligence artificielle.

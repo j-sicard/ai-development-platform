@@ -1,173 +1,190 @@
-# Architecture de la plateforme IA
+# Architecture de la plateforme AI Studio
 
 ## Présentation
 
-La plateforme AI Development Platform est une solution IA locale basée sur Open WebUI, Ollama et un modèle de langage spécialisé.
+AI Studio repose sur une architecture locale permettant d'exécuter une équipe d'agents IA spécialisés pour accompagner le développement de projets logiciels.
 
-L'objectif est de fournir un environnement d'assistance au développement logiciel utilisant des agents IA spécialisés, une base de connaissances métier et un moteur IA local.
+La plateforme sépare :
+
+* l'interface utilisateur ;
+* le moteur d'intelligence artificielle ;
+* les agents spécialisés ;
+* les connaissances générales ;
+* la mémoire propre à chaque projet.
+
+Cette séparation permet de construire une plateforme évolutive capable de s'adapter à différents types de projets.
 
 ---
 
-## Vue globale de l'architecture
+# Architecture générale
 
 ```text
-+----------------------+
-|      Utilisateur     |
-+----------------------+
-           |
-           v
-+----------------------+
-|   Navigateur Web     |
-+----------------------+
-           |
-           v
-+----------------------+
-|      Open WebUI      |
-|     Interface IA     |
-+----------------------+
-           |
-           v
-+----------------------+
-| Gestion des Agents IA|
-+----------------------+
-       |          |
-       v          v
-+------------+  +----------------------+
-| Agents IA  |  | Base de connaissances |
-+------------+  +----------------------+
-       |
-       v
-+----------------------+
-|        Ollama        |
-+----------------------+
-           |
-           v
-+----------------------+
-| Qwen2.5-Coder 14B    |
-|     Modèle IA        |
-+----------------------+
+Utilisateur
+
+    |
+
+    v
+
+Navigateur Web
+
+    |
+
+    v
+
+Open WebUI
+Interface IA
+
+    |
+
+    v
+
+Orchestration des Agents IA
+
+    |
+
+    +------------------------------+
+    |                              |
+    v                              v
+
+Agents IA spécialisés        Base de connaissances
+
+    |                              |
+    |                              |
+    +--------------+---------------+
+
+                   |
+
+                   v
+
+          Mémoire projet (future)
+
+                   |
+
+                   v
+
+          Base de données projet
+          Base vectorielle (RAG)
+
+                   |
+
+                   v
+
+               Ollama
+
+                   |
+
+                   v
+
+          Modèle IA local
+          Qwen2.5-Coder 14B
 ```
 
-
 ---
 
-# Composants de la plateforme
+# Composants principaux
 
-## 1. Utilisateur
-
-L'utilisateur interagit avec la plateforme depuis un navigateur web.
-
-Il peut :
-- Poser des questions
-- Demander une analyse
-- Solliciter un agent spécialisé
-- Obtenir une assistance au développement
-
----
-
-## 2. Open WebUI
+## Open WebUI
 
 Open WebUI constitue l'interface utilisateur de la plateforme.
 
-Rôle :
+Il permet :
 
-- Fournir une interface conversationnelle
-- Communiquer avec le moteur IA
-- Permettre l'utilisation des agents IA
-
----
-
-## 3. Gestion des Agents IA
-
-Cette couche organise les différents agents spécialisés.
-
-Elle permet :
-
-- La séparation des responsabilités
-- L'utilisation d'agents adaptés aux besoins
-- L'organisation du travail comme une équipe projet
-
-Les agents utilisent les capacités du modèle IA pour produire leurs analyses et recommandations.
+* d'interagir avec les agents IA ;
+* de gérer les conversations ;
+* d'accéder aux connaissances ;
+* de configurer les espaces de travail.
 
 ---
 
-## 4. Base de connaissances
+## Agents IA spécialisés
 
-La base de connaissances contient les informations nécessaires au contexte du projet.
+Les agents représentent les différents rôles d'une équipe de développement :
 
-Elle permet :
+* Product Owner ;
+* Research Analyst ;
+* Architecte ;
+* Backend Developer ;
+* Frontend Developer ;
+* DevOps ;
+* QA ;
+* Security Engineer ;
+* Technical Writer.
 
-- Conservation des informations métier
-- Références techniques
-- Documentation projet
-- Capitalisation des connaissances
-
-Elle améliore la pertinence des réponses fournies par les agents.
-
----
-
-## 5. Ollama
-
-Ollama est le moteur d'exécution local des modèles IA.
-
-Rôle :
-
-- Gestion des modèles de langage
-- Exécution locale des requêtes IA
-- Communication avec Open WebUI
-
-Avantages :
-
-- Fonctionnement local
-- Confidentialité des données
-- Maîtrise de l'environnement
+Chaque agent possède des responsabilités et des connaissances adaptées à son domaine.
 
 ---
 
-## 6. Modèle IA Qwen2.5-Coder 14B
+## Base de connaissances
 
-Qwen2.5-Coder 14B est le modèle de langage utilisé par la plateforme.
+La base de connaissances contient les savoirs généraux utilisés par les agents.
 
-Il fournit les capacités :
+Elle comprend notamment :
 
-- Génération de code
-- Analyse technique
-- Explication de concepts
-- Assistance au développement logiciel
+* méthodologie projet ;
+* analyse métier ;
+* architecture ;
+* développement ;
+* bases de données ;
+* DevOps ;
+* sécurité ;
+* tests ;
+* documentation.
 
----
-
-## 7. Docker
-
-Docker fournit l'environnement d'exécution des services.
-
-Rôle :
-
-- Isolation des composants
-- Déploiement simplifié
-- Gestion des services
-- Reproductibilité de l'environnement
+Ces connaissances sont indépendantes des projets.
 
 ---
 
-# Flux de fonctionnement
+## Mémoire projet
 
-## Exemple d'une demande utilisateur
+La mémoire projet permettra de conserver les informations spécifiques à chaque application développée.
 
-1. L'utilisateur envoie une demande via Open WebUI.
-2. La demande est orientée vers l'agent spécialisé.
-3. L'agent utilise le modèle Qwen2.5-Coder via Ollama.
-4. L'agent consulte les connaissances disponibles.
-5. Une réponse adaptée est générée.
+Elle pourra contenir :
+
+* besoins utilisateurs ;
+* décisions techniques ;
+* architecture choisie ;
+* documentation ;
+* historique des évolutions.
+
+Contrairement aux connaissances générales, cette mémoire sera propre à chaque projet.
 
 ---
 
-# Objectifs de l'architecture
+## Architecture RAG
 
-Cette architecture permet :
+L'architecture RAG permettra aux agents de retrouver les informations pertinentes au moment où elles sont nécessaires.
 
-- Une IA locale et maîtrisée
-- Une organisation multi-agents
-- Une séparation claire des responsabilités
-- Une meilleure adaptation aux projets logiciels
-- Une base évolutive pour de futurs développements
+Fonctionnement :
+
+1. Les documents sont analysés.
+2. Les informations sont transformées en vecteurs.
+3. Les vecteurs sont stockés dans une base vectorielle.
+4. L'agent recherche les informations utiles.
+5. Le modèle IA utilise ces informations pour répondre.
+
+---
+
+## Moteur IA local
+
+La plateforme utilise :
+
+* Ollama comme moteur d'exécution ;
+* Qwen2.5-Coder 14B comme modèle principal.
+
+L'exécution locale permet :
+
+* la confidentialité des données ;
+* l'indépendance vis-à-vis des services externes ;
+* le contrôle de l'environnement.
+
+---
+
+# Évolution prévue
+
+L'architecture évoluera progressivement avec :
+
+* une base PostgreSQL pour les données structurées ;
+* une base vectorielle pour le RAG ;
+* une mémoire projet persistante ;
+* une orchestration avancée entre agents ;
+* une intégration avec les outils de développement.
