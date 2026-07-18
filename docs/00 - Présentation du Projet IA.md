@@ -59,7 +59,45 @@ Chaque agent intervient selon son domaine d'expertise.
 
 Exemple :
 
-![architecture-studio-ia.png](../assets/architecture-studio-ia.png)
+```text id="5a7u2c"
+Besoin utilisateur
+
+        │
+
+        ▼
+
+Product Owner
+
+        │
+
+        ▼
+
+Architecte
+
+        │
+
+        ▼
+
+Développeurs
+
+        │
+
+        ▼
+
+QA / Sécurité
+
+        │
+
+        ▼
+
+DevOps
+
+        │
+
+        ▼
+
+Documentation
+```
 
 ---
 

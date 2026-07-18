@@ -10,6 +10,9 @@ Chaque agent possède un domaine d'expertise (analyse métier, architecture, dé
 
 ---
 
+## Architecture de la plateforme
+![architecture_platefor_ia.png](assets/architecture_platefor_ia.png)
+
 # Objectifs
 
 AI Studio a pour objectif de :
